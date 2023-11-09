@@ -20,10 +20,7 @@ export default defineConfig({
   build: {
     copyPublicDir: false,
     rollupOptions: {
-      external: [
-        ...Object.keys(peerDependencies),
-        ...Object.keys(dependencies),
-      ],
+      external: [...Object.keys(peerDependencies)],
       // external: ['react', 'react/jsx-runtime'],
       output: {
         assetFileNames: 'assets/[name][extname]',
