@@ -1,29 +1,68 @@
-# Bratislava component library
+# Component library
 
+## Available Scripts
 
+In the project directory, you can run:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### `npm run dev`
 
-Currently, two official plugins are available:
+Runs the app for local development.\
+Open [http://localhost:5173/](http://localhost:5173/) to view it in the browser.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-## Expanding the ESLint configuration
+### `npm run build`
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Builds the app to the `dist` folder, ready to be published or locally tested as a library.
 
-- Configure the top-level `parserOptions` property like this:
+## Local testing with Yalc
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+For local testing our library withou the necessity to publish to npm, you can use a small local repository called `yalc`\
+You can find complete documentation [here](https://github.com/wclr/yalc).
+
+### `Instalation`
+
+Using NPM:
+
+```
+npm i yalc -g
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+Using Yarn:
+
+```
+yarn global add yalc
+```
+
+### `Publishing built version to local repository`
+
+You can publish current built version of this library using:
+
+```
+yalc push --sig
+```
+
+It will copy all the files that should be published in remote NPM registry. We are using `--sig` flag, to ensure that the dependent project knows, that something has changed. Otherwise it will keep the last imported version in cache and not propagate current changes.
+
+### `Import local library`
+
+To import our published library into dependent project you can use:
+
+```
+yalc link <library-name>
+```
+
+### `Remove imported library`
+
+To remove the imported library you can use:
+
+```
+yalc remove <library-name>
+```
+
+alternatively to remove all imported libraries use:
+
+```
+yalc remove --all
+```
