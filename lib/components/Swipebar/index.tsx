@@ -1,3 +1,5 @@
-export const Swipebar = (): JSX.Element => {
-  return <div className="w-48 h-12 inline-blick bg-gray-200 rounded-full" />
+import React from 'react'
+
+export const Swipebar = (): React.JSX.Element => {
+  return <div className="inline-block h-12 w-48 rounded-full bg-gray-200" />
 }

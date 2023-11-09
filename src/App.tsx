@@ -1,11 +1,14 @@
-import { Button, Input, Swipebar } from '../lib/main'
 import './App.css'
 import 'tailwindcss/tailwind.css'
 
-function App() {
+import React from 'react'
+
+import { Button, Input, Swipebar } from '../lib/main'
+
+const App: React.FC = () => {
   return (
     <>
-      <Button>KAKA</Button>
+      <Button label="Test button label" onClick={() => alert('clicked')} />
       <Swipebar />
       <Input />
     </>
