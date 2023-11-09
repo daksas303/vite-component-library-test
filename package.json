@@ -15,9 +15,7 @@
     "prettier": "prettier --write .",
     "prettier:check": "prettier --check ."
   },
-  "dependencies": {
-    "tailwindcss": "^3.3.5"
-  },
+  "dependencies": {},
   "peerDependencies": {
     "react": "^18.2.0",
     "react-aria": "^3.29.0",

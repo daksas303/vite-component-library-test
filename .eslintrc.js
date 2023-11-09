@@ -33,6 +33,8 @@ module.exports = {
     // TODO: Turned off because of some missing setup
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-misused-promises': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+
     // Solve warning "Promise-returning function provided to attribute where a void return was expected."
     // '@typescript-eslint/no-misused-promises': [
     //   2,
